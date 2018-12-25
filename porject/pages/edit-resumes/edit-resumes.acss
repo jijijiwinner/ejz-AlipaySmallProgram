@@ -1,0 +1,332 @@
+.content{
+    box-sizing: border-box;
+    padding: 16rpx 12rpx 0rpx; 
+}
+.head{
+    height: 200rpx;
+    width: 100%;
+    border-radius: 8rpx;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(/images/edit-resumes/into_icon.png);
+    background-position: 670rpx;
+    background-size: 14rpx 27rpx;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.head_head{
+    margin-left: 32rpx;
+    height: 143rpx;
+    width: 143rpx;
+    background-size: 100% 100%;
+    background-image: url(/images/edit-resumes/head_bg.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head_icon{
+    height: 124rpx;
+    width: 124rpx;
+    border-radius: 124rpx;
+    background-size: 100% 100%;
+}
+.head_text{
+    margin-left:32rpx;
+    font-size: 24rpx;
+    color: rgb(170,170,170);
+}
+/* title */
+.content_title{
+    height:80rpx;
+    line-height: 80rpx;
+    width: 100%;
+    font-size: 24rpx;
+    color: rgb(55,211,203);
+    box-sizing: border-box;
+    padding-left: 14rpx;
+}
+/* 基本信息 */
+/* 单选钮样式 */
+radio {
+  transform:scale(0.6);
+}
+.basic_box{
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+.basic_item{
+    height: 86rpx;
+    border-bottom: 1rpx solid #dbedff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.basic_item:last-child{
+    border: none;
+}
+.basic_item_left{
+    font-size: 28rpx;
+    color: rgb(51, 51, 51);
+    width: 184rpx;
+}
+.basic_item_left_xing{
+    margin-right: 10rpx;
+    margin-left: 14rpx;
+    color:rgb(55,211,203);
+}
+.basic_item_right{
+     width: 486rpx;
+     height: 100%; 
+     display: flex;
+     align-items: center; 
+}
+.basic_item_right_input{
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 28rpx;
+    color: rgb(51, 51, 51) !important;
+}
+.basic_item_right_box{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.select_icon{
+    width: 24rpx;
+    height: 24rpx;
+    background-size: 100% 100%;
+    margin-right:22rpx;
+}
+.gender{
+    margin-right:88rpx;
+    display: flex;
+    align-items: center;
+}
+.radio_icon{
+     margin-right:22rpx;
+}
+.row-extra{
+    height: 86rpx;
+    width: 486rpx;
+    line-height: 86rpx;
+}
+.basic_item_left .not{
+    margin-left: 26rpx;
+}
+
+/* 教育方面 */
+.education_box{
+    margin-top: 16rpx;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+.education_box .gender{
+    margin-right: 36rpx;
+}
+.school{
+    height: 86rpx;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1rpx solid #dbedff;
+}
+.year{
+    height: 86rpx;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-image: url(/images/edit-resumes/into_icon.png);
+    background-size: 14rpx 28rpx;
+    background-position:670rpx center; */
+    background-repeat: no-repeat;
+    border-bottom: 1rpx solid #dbedff;
+}
+.basic_item_right{
+    font-size: 28rpx;
+    color: rgb(51, 51, 51);
+}
+.expectation{
+    border-bottom: 1rpx solid #dbedff;
+}
+.expectation .resume_box_top{
+    padding-left:0rpx; 
+}
+
+/* 选择 */
+.select_box{
+    margin-top: 16rpx;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+}
+.city{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 86rpx;  
+    align-items: center; 
+    padding: 0 14rpx;  
+}
+.city_item{
+    position: relative;
+    width: 150rpx;
+}
+.required{
+    color: rgb(55,211,203);
+    position: absolute;
+}
+.city_icon{
+    position: absolute;
+    left: 120rpx;
+    width: 24rpx;
+    height: 12rpx;
+    background-size: 100% 100%;
+    top:5rpx;
+    z-index: 1;
+}
+/* .city_picker{
+    /* width: 80rpx;
+    height: 20rpx; 
+    position: absolute;
+}
+.row{
+    position: relative;
+} */
+.city-extra{
+    width: 100rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 16rpx;
+    top:-5rpx;
+    z-index: 3;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 联系方式 */
+.contactWay_box{
+    margin-top: 16rpx;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8rpx;
+    overflow: hidden;
+    padding: 0 13rpx;  
+    box-sizing: border-box;    
+}
+/* 自我简历 */
+.resume_box{
+    margin-top: 16rpx;
+    width: 100%;
+    border-radius: 8rpx;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.resume_box_top{
+    height:80rpx ;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color: rgb(51, 51, 51);
+    box-sizing: border-box;
+    padding-left: 40rpx;                      
+}
+.resume_box_top_text{
+    margin-left: 38rpx;
+    font-size: 24rpx;
+    color: rgb(55,211,203);                 
+}
+.resume_box_content{
+    height: 194rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 34rpx;
+}
+.resume_box_content_top{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.resume_box_content_top_margin{
+    margin-top: 30rpx;
+}
+.resume_box_content .resume_box_item_active{
+     background-color: rgb(55,211,203);
+}
+.resume_box_item{
+    height: 50rpx;
+    width: 140rpx;
+    background-color: #bbbbbb;
+    font-size:24rpx;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 50rpx; 
+    border-radius: 50rpx;  
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    margin-bottom: 20rpx;              
+}
+/* 工作经验 */
+.experience_box{
+    box-sizing: border-box;
+    margin-top: 16rpx;
+    width: 100%;
+    border-radius: 8rpx;
+    overflow: hidden;
+    background-color: #ffffff;
+    min-height:208rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.experience_box_left{
+     padding-top:30rpx; 
+     width: 186rpx;
+     font-size: 28rpx;
+     color: rgb(51, 51, 51);
+     text-align: center;
+}
+.experience_box_text{
+    padding-top:30rpx; 
+    width: 512rpx;
+    font-size: 24rpx;
+    color: rgb(170,170,170);
+}
+.agreement{
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agreement_icon{
+    width: 26rpx;
+    height: 26rpx;
+    background-size: 100% 100%;
+    margin-right: 14rpx;
+}
+.agreement_text{
+    color: rgb(55,211,203);
+}
+/* 保存 */
+.save{
+    height: 98rpx;
+    width: 100%;
+    text-align: center;
+    line-height: 98rpx;
+    color: rgb(255, 255, 255);
+    font-size: 36rpx;
+    background-color: rgb(55,211,203);
+}

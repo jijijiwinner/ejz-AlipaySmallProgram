@@ -1,0 +1,20 @@
+<view class="item" a:for="{{data.dataMap.userInformList}}">
+  <view class="item_top {{item.jobStatus==3?'dispaly_none':item.jobStatus==6?'dispaly_none':item.jobStatus==7?'dispaly_none':''}}">
+    <view class="item_top_time">{{item.createdDateTop}} </view>
+  </view>
+  <view class="item_box {{item.jobStatus==3?'dispaly_none':item.jobStatus==6?'dispaly_none':item.jobStatus==7?'dispaly_none':''}}">
+    <view class="item_box_top"></view>
+    <view class="item_box_content">
+      <view class="box_c_text1">
+        <view class="box_c_text1_left">{{item.jobOfflineTitle}} </view>
+        <view class="box_c_text1_right">【{{item.jobStatus==1?'录用':item.jobStatus==2?'招满':item.jobStatus==3?'发工资':item.jobStatus==4?'认证通过':item.jobStatus==5?'未通过':item.jobStatus==6?'线上兼职发工资':item.jobStatus==7?'加薪券加薪':''}}】</view>
+      </view>
+      <view class="box_c_time">{{item.createdDate}}</view>
+      <view class="box_c_text2">{{item.msg}}</view>
+    </view>
+    <view class="line"></view>
+    <navigator url="../job-record/job-record?jobId={{item.jobOfflineId}}" redirect hover-class="className">
+      <view class="item_box_bottom">立即查看</view>
+    </navigator>
+  </view>
+</view>

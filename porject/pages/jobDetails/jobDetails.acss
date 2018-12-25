@@ -1,0 +1,241 @@
+page{
+    margin-bottom: 98rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+.inner{
+    box-sizing: border-box;
+    padding: 16rpx 12rpx 0rpx;
+}
+.header{
+    width: 100%;
+    height:196rpx;
+    background-color: #ffffff;
+    border-radius: 8rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 22rpx 0 28rpx;             
+}
+.header_pic{
+    width: 124rpx;
+    height: 124rpx;
+    background-size: 100% 100%;
+}
+.header_right{
+    width: 518rpx;
+    height: 124rpx;
+}
+.job_name{
+    font-size: 30rpx;
+    color: rgb(51, 51, 51);
+    text-align: left;
+}
+.h_r_box2{
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.h_box2_left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.jobName{
+    font-size: 24rpx;
+    color: rgb(187, 187, 187);
+}
+.clearing{
+    margin-left: 18rpx;
+    height: 28rpx;
+    border-radius: 26rpx;
+    border: 2rpx solid  rgb(55, 211, 203);
+    color: rgb(55, 211, 203);
+    text-align: center;
+    line-height: 34rpx;
+    font-size: 20rpx;
+    padding: 0 10rpx;
+}
+.money{
+    color: rgb(253, 186, 50);
+    font-size: 40rpx;
+}
+.h_r_box3{
+    margin-top: 10rpx; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.h_box3_left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.time_icon{
+    width: 20rpx;
+    height: 20rpx;
+    background-size: 100% 100%;
+    margin-right: 12rpx; 
+}
+.time_text{
+     color: rgb(187, 187, 187);
+     font-size: 20rpx;
+}
+.unit{
+    font-size: 22rpx;
+    color: rgb(187, 187, 187);
+}
+
+/* 模块2 */
+.jobIntroduce{
+    margin-top: 16rpx;
+    height: 414rpx;
+    width: 100%;
+    border-radius:8rpx;
+    background-color: #ffffff;
+}
+.jobIntroduce_itme{
+    height: 200rpx;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding:30rpx 30rpx;
+}
+.j_i_i{
+    color: rgb(51, 51, 51); 
+}
+.line{
+    background-color: #dbedff;
+    height: 2rpx;
+    width: 100%;
+}
+
+/*  */
+.jobContent{
+    margin-top: 10rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: rgb(51, 51, 51);
+    background-color: #ffffff;
+    border-radius: 8rpx;
+}
+.jobContent_box{
+    box-sizing: border-box;
+    padding: 0 30rpx;
+}
+.jobContent_top{
+    height: 90rpx;
+    width: 100%;
+    text-align: left;
+    line-height: 90rpx;
+}
+.treatment{
+    box-sizing: border-box;
+    padding-bottom: 50rpx;
+}
+.remark{
+    margin-top: 36rpx;
+}
+.hint{
+    margin-top: 60rpx;
+    margin-bottom:50rpx;
+}
+.jobContent_bottom{
+    box-sizing: border-box;
+    padding-left:30rpx;
+    padding-right: 40rpx;  
+    height: 80rpx;
+    line-height: 80rpx;
+    color: rgb(51, 51, 51);
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.into_icon{
+    width: 14rpx;
+    height: 26rpx;
+    background-size: 100% 100%;
+    margin-left: 44rpx;
+}
+/*  */
+.complaint{
+    height: 146rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left:30rpx;
+    padding-right:18rpx;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(55, 211, 203);
+}
+.complaint_text{
+    width: 322rpx;
+    font-size: 20rpx;
+}
+.complaint_button{
+     height: 30rpx;
+     width: 120rpx;
+     border: 2rpx solid #37d3cb;
+     text-align: center;
+     line-height: 30rpx;
+     border-radius: 30rpx;
+     font-size: 22rpx;
+    }
+    
+    /*  */
+.page_bottom{
+    position: fixed;
+    bottom: 0;
+    height: 98rpx;
+    width: 100%;
+    background-color: #ffffff;
+    display:flex;
+    justify-content: space-between; 
+}
+.page_bottom_left{
+    width: 320rpx;
+    height: 98rpx;
+    color: #333333;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.consult_icon{
+   width: 33rpx;
+   height: 36rpx;
+   background-size: 100% 100%;
+}
+.share_icon{
+    width: 26rpx;
+    height: 38rpx;
+    background-size: 100% 100%;
+}
+.page_bottom_right{
+    width: 420rpx;
+    height: 98rpx;
+    background-color: #37d3cb;
+    line-height: 98rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color: #ffffff;
+}
+.inner .page_bottom_right_active{
+    background-color:#bbbbbb;
+}
+.share_text{
+    margin-left: 8rpx;
+}
+.consult_box{
+   display: flex;
+   align-items: center;
+}
+.share_box{
+   display: flex;
+   align-items: center;
+}

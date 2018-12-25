@@ -1,0 +1,114 @@
+page{
+    box-sizing: border-box;
+    padding-top: 54rpx;
+}
+.box{
+    height: 578rpx;
+    width: 694rpx;
+    position: relative;
+    margin: auto;
+}
+.forget_top{
+    position: absolute;
+    left: 50%;
+    margin-left:-145rpx; 
+    top: 0;
+    width: 290rpx;
+    height: 147rpx;
+    background-size: 100% 100%;
+    z-index: 99;
+}
+.content{
+    width: 694rpx;
+    height: 460rpx;
+    background-image: url(/images/forget/forget_content.png);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    padding-top: 74rpx;
+}
+.mobile{
+   margin: auto;
+   width: 568rpx;
+   height: 86rpx;
+   border-radius: 86rpx;
+   background-color: rgb(242,248,255);
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   box-sizing: border-box;
+   padding-left: 48rpx;
+}
+.mobile{
+    margin: auto; 
+    width: 568rpx;
+    height: 86rpx;
+    border-radius: 86rpx;
+    background-color: rgb(242,248,255);
+    box-sizing: border-box;
+    padding-left: 50rpx;
+}
+.mobile_number{
+    width: 470rpx;
+    height: 86rpx;
+    font-size: 24rpx;
+}
+.a-input{
+     padding: 0;
+}
+input{
+    font-family: MicroSoft YaHei;
+    border:0;
+    background-color:transparent ;
+    font-size: 24rpx;
+}
+.verification{
+    border-radius: 86rpx;
+    margin: 26rpx auto;
+    width: 568rpx;
+    height: 86rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.verification_left{
+    width: 360rpx;
+    height: 86rpx;
+    background-color: rgb(242,248,255);
+    border-radius: 86rpx;
+    box-sizing: border-box;
+    padding-left: 50rpx;
+}
+.verification_input{
+    width: 250rpx;
+    height: 86rpx;
+}
+.verification_right{
+     width: 180rpx;
+     height: 86rpx;
+     background-color:rgb(253,186,50);
+     text-align: center;
+     line-height: 86rpx;
+     color: rgb(255, 255, 255);
+     font-size: 24rpx;
+     border-radius: 86rpx;
+}
+.password{
+     margin: 26rpx auto; 
+}
+.log_in{
+  margin: 25rpx auto; 
+  width: 496rpx;
+  height: 140rpx;
+  background-image: url(/images/log-in/button_pic.png);
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 98rpx;
+}
+.log_in_text{
+    font-size: 32rpx;
+    color: rgb(255,255,255);
+}
+    

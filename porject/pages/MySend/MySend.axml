@@ -1,0 +1,136 @@
+  
+<view class="nav">
+  <view class="nav_item {{currentTab==0?'nav_item_active':''}}" data-current="0" onTap="swichNav">全部</view>
+  <view class="nav_line"></view>
+  <view class="nav_item {{currentTab==1?'nav_item_active':''}}" data-current="1" onTap="swichNav">待录用</view>
+  <view class="nav_line"></view>
+  <view class="nav_item {{currentTab==2?'nav_item_active':''}}" data-current="2" onTap="swichNav">待上岗</view>
+  <view class="nav_line"></view>
+  <view class="nav_item {{currentTab==3?'nav_item_active':''}}" data-current="3" onTap="swichNav">待结算</view>
+</view>
+<view class="content">
+  <view a:if="{{currentTab==0}}">
+    <navigator url="../job-record/job-record?jobId={{item.jobId}}" redirect hover-class="className" a:for="{{jobOfflinePage}}">
+      <view class="all_item">
+        <image src="/images/job_icon/{{item.solrJobOffline.picName}}.png" mode="" class="allItem_pic"/>
+        <view class="i_top_right">
+          <view class="item_text1">
+            <text class="job_name">{{item.solrJobOffline.title}}</text>
+            <text class="condition">{{item.dealStatusStr}}</text>
+          </view>
+          <view class="item_text2">
+            <view class="text2_left">
+              <text class="text2_left_job">{{item.solrJobOffline.jobTypeStr.split(',')[1]}}</text>
+              <view class="settlement">{{item.solrJobOffline.settlementTypeStr}}结</view>
+            </view>
+            <view class="text2_right">
+              <text class="money">{{item.solrJobOffline.salaryStr}}</text>
+              <text class="unit">RMB/{{item.solrJobOffline.salaryUnitStr}}</text>
+            </view>
+          </view>
+          <view class="item_text3">
+            <text class="text3_time">{{item.solrJobOffline.startDate}} 至 {{item.solrJobOffline.endDate}}</text>
+            <!-- <view class="text3_site"><image src="/images/MySend/site_icon.png" mode="" class="text3_site_icon"/><text class="text3_site_text">18.29km</text></view> -->
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view a:elif="{{currentTab==1}}">
+    <view class="c_item" a:for="{{jobOfflinePage}}">
+      <navigator url="../job-record/job-record?jobId={{item.jobId}}" redirect hover-class="className">
+        <view class="i_top">
+          <image src="/images/job_icon/{{item.solrJobOffline.picName}}.png" mode="" class="i_icon" />
+          <view class="i_top_right">
+            <view class="item_text1">
+              <text class="job_name">{{item.solrJobOffline.title}}</text>
+              <text class="condition">{{item.dealStatusStr}}</text>
+            </view>
+            <view class="item_text2">
+              <view class="text2_left">
+                <text class="text2_left_job">{{item.solrJobOffline.jobTypeStr.split(',')[1]}}</text>
+                <view class="settlement">{{item.solrJobOffline.settlementTypeStr}}结</view>
+              </view>
+              <view class="text2_right">
+                <text class="money">{{item.solrJobOffline.salaryStr}}</text>
+                <text class="unit">RMB/{{item.solrJobOffline.salaryUnitStr}}</text>
+              </view>
+            </view>
+            <view class="item_text3">
+              <text class="text3_time">{{item.solrJobOffline.startDate}} 至 {{item.solrJobOffline.endDate}}</text>
+              <!-- <view class="text3_site"><image src="/images/MySend/site_icon.png" mode="" class="text3_site_icon"/><text class="text3_site_text">18.29km</text></view> -->
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="c_bottom">
+        <text class="cancel" onTap="cancel" data-item='{{item}}'>取消投递</text>
+        <text class="enterprise" onTap="ringUp" data-item='{{item}}'>联系企业</text>
+      </view>
+    </view>
+  </view>
+  <view a:elif="{{currentTab==2}}">
+    <view class="c_item" a:for="{{jobOfflinePage}}">
+      <navigator url="../job-record/job-record?jobId={{item.jobId}}" redirect hover-class="className">
+        <view class="i_top">
+          <image src="/images/job_icon/{{item.solrJobOffline.picName}}.png" mode="" class="i_icon" />
+          <view class="i_top_right">
+            <view class="item_text1">
+              <text class="job_name">{{item.solrJobOffline.title}}</text>
+              <text class="condition">{{item.dealStatusStr}}</text>
+            </view>
+            <view class="item_text2">
+              <view class="text2_left">
+                <text class="text2_left_job">{{item.solrJobOffline.jobTypeStr.split(',')[1]}}</text>
+                <view class="settlement">{{item.solrJobOffline.settlementTypeStr}}结</view>
+              </view>
+              <view class="text2_right">
+                <text class="money">{{item.solrJobOffline.salaryStr}}</text>
+                <text class="unit">RMB/{{item.solrJobOffline.salaryUnitStr}}</text>
+              </view>
+            </view>
+            <view class="item_text3">
+              <text class="text3_time">{{item.solrJobOffline.startDate}} 至 {{item.solrJobOffline.endDate}}</text>
+              <!-- <view class="text3_site"><image src="/images/MySend/site_icon.png" mode="" class="text3_site_icon"/><text class="text3_site_text">18.29km</text></view> -->
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="c_bottom">
+        <text class="enterprise" onTap="ringUp" data-item='{{item}}'>联系企业</text>
+      </view>
+    </view>
+  </view>
+  <view a:elif="{{currentTab==3}}">
+    <view class="c_item" a:for="{{jobOfflinePage}}">
+      <navigator url="../job-record/job-record?jobId={{item.jobId}}" redirect hover-class="className">
+        <view class="i_top">
+          <image src="/images/job_icon/{{item.solrJobOffline.picName}}.png" mode="" class="i_icon" />
+          <view class="i_top_right">
+            <view class="item_text1">
+              <text class="job_name">{{item.solrJobOffline.title}}</text>
+              <text class="condition">{{item.dealStatusStr}}</text>
+            </view>
+            <view class="item_text2">
+              <view class="text2_left">
+                <text class="text2_left_job">{{item.solrJobOffline.jobTypeStr.split(',')[1]}}</text>
+                <view class="settlement">{{item.solrJobOffline.settlementTypeStr}}结</view>
+              </view>
+              <view class="text2_right">
+                <text class="money">{{item.solrJobOffline.salaryStr}}</text>
+                <text class="unit">RMB/{{item.solrJobOffline.salaryUnitStr}}</text>
+              </view>
+            </view>
+            <view class="item_text3">
+              <text class="text3_time">{{item.solrJobOffline.startDate}} 至 {{item.solrJobOffline.endDate}}</text>
+              <!-- <view class="text3_site"><image src="/images/MySend/site_icon.png" mode="" class="text3_site_icon"/><text class="text3_site_text">18.29km</text></view> -->
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="c_bottom">
+        <text class="enterprise" onTap="ringUp" data-item='{{item}}'>联系企业</text>
+      </view>
+    </view>
+  </view>
+</view>

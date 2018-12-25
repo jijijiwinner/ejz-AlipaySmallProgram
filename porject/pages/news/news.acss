@@ -1,0 +1,34 @@
+.item{
+    background-color:#ffffff;
+    width: 100%;
+    height:140rpx;
+    margin-bottom:16rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+image{
+    height: 76rpx;
+    width: 76rpx;
+    background-size: 100% 100%;
+    margin: 32rpx;
+}
+.text_box{
+
+}
+.text_top{
+    opacity: 100%;
+    color: #000000 100%;
+    font-size: 36rpx;
+    margin-bottom: 18rpx;
+    font-weight: 600;
+}
+.text_bottom{
+     opacity: 50%;
+     color: #000000 100%;
+     font-size: 24rpx;
+    }
+text{
+     display:block;
+    }

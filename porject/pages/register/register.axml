@@ -1,0 +1,29 @@
+<view class="box">
+  <image src="/images/log-in/logo_top.png" mode="" class="register_top"/>
+  <view class="content">
+    <view class="mobile">
+      <input type="number" placeholder="手机号码" maxlength='11' onInput="mobileInput" auto-focus class="mobile_number" />
+    </view>
+    <view class="verification">
+      <view class="verification_left">
+        <input type="number" placeholder="请输入验证码" maxlength='6' onInput="codeInput" auto-focus class="verification_input" />
+      </view>
+      <view class="verification_right" disabled='{{disabled}}' onTap="getVerificationCode">{{time}}</view>
+    </view>
+    <view class="mobile password">
+      <input password type="" placeholder="请输入密码（6-16位数字或字母）" maxlength='16' onInput="passwordInput" auto-focus class="mobile_number" />
+    </view>
+    <view class="mobile password">
+      <input password type="" placeholder="请输入密码（6-16位数字或字母）" maxlength='16' onInput="confirmPasswordInput" auto-focus class="mobile_number" />
+    </view>
+    <view class="content_botton">
+      <image src="/images/register/already_icon.png" mode="" class="already_icon"/>
+      <text class="agreement_box">注册即同意                                 
+        <text class="agreement" onTap="protocol">《用户协议》</text>
+      </text>
+    </view>
+  </view>
+</view>
+<view class="log_in" onTap="register">
+  <text class="log_in_text">完成</text>
+</view>

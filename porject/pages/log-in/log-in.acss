@@ -1,0 +1,90 @@
+page{
+    box-sizing:border-box;
+    padding-top:54rpx; 
+}
+.box{
+   width: 649rpx;
+   height: 575rpx;
+   margin: auto;
+   position: relative;
+}
+.logo_top{
+    position: absolute;
+    left: 50%;
+    margin-left:-145rpx; 
+    top: 0;
+    width: 290rpx;
+    height: 147rpx;
+    background-size: 100% 100%;
+    z-index: 99;
+}
+.content{
+    position: absolute;
+    bottom: 0;
+    width: 649rpx;
+    height: 456rpx;
+    background-image: url(/images/log-in/log_content.png);
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding-top:74rpx; 
+}
+.mobile{
+   margin: auto;
+   width: 568rpx;
+   height: 86rpx;
+   border-radius: 86rpx;
+   background-color: rgb(242,248,255);
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   box-sizing: border-box;
+   padding-left: 48rpx;
+}
+.password{
+    margin-top:44rpx; 
+}
+.mobile_icon{
+    width: 34rpx;
+    height: 40rpx;
+    background-size: 100% 100%;
+    margin-right: 36rpx;
+}
+.password_icon{
+    width: 31rpx;
+    height: 38rpx;
+    background-size: 100% 100%;
+    margin-right: 36rpx; 
+}
+.mobile_number{
+     width: 380rpx;
+}
+.a-input{
+     padding: 0;
+}
+input{
+    font-family: MicroSoft YaHei;
+    border:0;
+    background-color:transparent ;
+    font-size: 24rpx;
+}   
+.content_bottom{
+    margin:58rpx auto;
+    color:rgb(55,211,203);
+    font-size: 24rpx; 
+    display: flex;
+    justify-content:space-between;
+    width: 460rpx;
+} 
+.log_in{
+  margin: 25rpx auto; 
+  width: 496rpx;
+  height: 140rpx;
+  background-image: url(/images/log-in/button_pic.png);
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 98rpx;
+}
+.log_in_text{
+    font-size: 32rpx;
+    color: rgb(255,255,255);
+}

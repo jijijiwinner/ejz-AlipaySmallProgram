@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/job/job",
+    "pages/news/news",
+    "pages/my/my",
+    "pages/log-in/log-in",
+    "pages/forget/forget",
+    "pages/register/register",
+    "pages/contact-us/contact-us",
+    "pages/resumes/resumes",
+    "pages/edit-resumes/edit-resumes",
+    "pages/nav-list/nav-list",
+    "pages/MySend/MySend",
+    "pages/jobDetails/jobDetails",
+    "pages/jobAssistant/jobAssistant",
+    "pages/inform/inform",
+    "pages/job-record/job-record"
+  ],
+  "window": {
+    "defaultTitle": "e兼职"
+  },
+  "tabBar": {
+    "textColor": "#aaaaaa",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/job/job",
+        "name": "兼职",
+        "icon": "images/nav/job.png",
+        "activeIcon": "images/nav/job_active.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "name": "消息",
+        "icon": "images/nav/news.png",
+        "activeIcon": "images/nav/news_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "name": "我的",
+        "icon": "images/nav/my.png",
+        "activeIcon": "images/nav/my_active.png"
+      }
+    ]
+  }
+}

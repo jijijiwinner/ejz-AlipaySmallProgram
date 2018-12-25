@@ -1,0 +1,124 @@
+page{
+    box-sizing: border-box;
+    padding: 0 12rpx; 
+}
+.item_top{
+    height: 84rpx;
+    line-height: 84rpx;
+    font-size: 24rpx;
+    color:#66dcd8;
+    box-sizing: border-box;
+    padding-left: 12rpx; 
+}
+.all_item{
+    height: 178rpx;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.allItem_pic{
+    margin-left:18rpx;
+    width: 108rpx;
+    height: 108rpx;
+    background-size:100% 100%;
+}
+.i_top_right{
+     height: 100%;
+     width: 560rpx;
+     margin-right:16rpx;
+     box-sizing: border-box;
+     padding-top: 30rpx;  
+}
+.item_text1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.job_name{
+    font-size: 30rpx;
+    color: rgb(51, 51, 51);
+}
+.item_text2{
+    margin-top: 10rpx;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.text2_left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.text2_left_job{
+    font-size: 24rpx;
+    color: rgb(187, 187, 187);
+    margin-right: 12rpx;            
+}
+.settlement{
+    padding: 0 0.1rem;
+    height: 28rpx;
+    border-radius: 26rpx;
+    border:2rpx solid  #37d3cb; 
+    font-size: 22rpx ;
+    text-align: center;
+    line-height: 30rpx;
+    color: #37d3cb;
+}
+.text2_right{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+.money{
+    margin-right: 12rpx;
+    font-size: 40rpx;
+    color: rgb(253, 186, 50);
+}
+.unit{
+   font-size: 22rpx;
+   color: rgb(187, 187, 187);
+}
+.item_text3{
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text3_time{
+    color: rgb(187, 187, 187);
+    font-size: 20rpx;
+}
+.text3_site{
+    display: flex;
+    align-items: center;
+}
+.text3_site_icon{
+     width: 16rpx;
+     height: 22rpx;
+     background-size: 100% 100%;
+     margin-right:14rpx; 
+}
+.text3_site_text{
+     color: #bbbbbb;
+     font-size: 18rpx;
+    }
+    /* c_bottom */
+.c_bottom{
+    height: 60rpx;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb( 55, 211, 203);
+    font-size: 22rpx;
+}
+.enterprise{
+    margin-right: 32rpx;
+}
+.cancel{
+    margin-right: 80rpx;
+}

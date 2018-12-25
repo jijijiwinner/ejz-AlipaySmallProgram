@@ -1,0 +1,25 @@
+<view class="header">
+    <image src="{{data.dataMap.userResume.headerFile}}" mode="" class="header_icon"/>
+    <text class="header_text" onTap="IntoLogIn">{{data.dataMap.userResume.realName}}</text>
+</view>
+<view class="resume item" onTap="resumes">
+    <view class="text_box">
+        <text class="text_top">我的简历</text>
+        <text class="text_bottom">完善简历提高您的录用率</text>
+    </view>
+    <image src="/images/my/into.png" mode="" class="into"/>
+</view>
+<view class="send item" onTap="mysend">
+    <view class="text_box">
+        <text class="text_top">我的投递</text>
+        <text class="text_bottom">完善简历提高您的录用率</text>
+    </view>
+    <image src="/images/my/into.png" mode="" class="into"/>
+</view>
+<view class="contact item" onTap="ContactUs">
+    <view class="text_box">
+        <text class="text_top">联系我们</text>
+        <text class="text_bottom">完善简历提高您的录用率</text>
+    </view>
+    <image src="/images/my/into.png" mode="" class="into"/>
+</view>

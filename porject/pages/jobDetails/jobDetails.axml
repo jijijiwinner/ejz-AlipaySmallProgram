@@ -1,0 +1,80 @@
+<view class="inner">
+  <view class="header">
+    <image src="/images/job_icon/{{picName}}.png" mode="" class="header_pic"/>
+    <view class="header_right">
+      <view class="job_name">{{dataMap.jobOffline.title}}</view>
+      <view class="h_r_box2">
+        <view class="h_box2_left">
+          <text class="jobName">{{dataMap.jobOffline.jobTypeStr.split(',')[1]}}</text>
+          <view class="clearing">{{dataMap.jobOffline.settlementTypeStr}}结</view>
+        </view>
+        <text class="money">{{dataMap.jobOffline.salaryStr}}</text>
+      </view>
+      <view class="h_r_box3">
+        <view class="h_box3_left">
+          <image src="/images/jobDetails/time_icon.png" mode="" class="time_icon" />
+          <text class="time_text">{{createdDate}}</text>
+        </view>
+        <view class="unit">RMB/{{dataMap.jobOffline.settlementTypeStr}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="jobIntroduce">
+    <view class="jobIntroduce_itme">
+      <view class="j_i_i">
+        <text>兼职类型：</text>
+        <text>{{dataMap.jobOffline.jobTypeStr.split(',')[0]}}</text>
+      </view>
+      <view class="j_i_i">
+        <text>招聘人数：</text>
+        <text>{{dataMap.jobOffline.needNumber}}</text>
+      </view>
+      <view class="j_i_i">
+        <text>性别要求：</text>
+        <text>{{dataMap.jobOffline.genderLimit==0?'女':dataMap.jobOffline.genderLimit==1?'男':'不限'}}</text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="jobIntroduce_itme">
+      <view class="j_i_i">
+        <text>工作日期：</text>
+        <text>{{startDate}}至{{endDate}}</text>
+      </view>
+      <view class="j_i_i">
+        <text>工作时段：</text>
+        <text>{{startDatetime}}至{{endDatetime}}</text>
+      </view>
+      <view class="j_i_i">
+        <text>工作地点：</text>
+        <text>{{dataMap.jobOffline.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="jobContent">
+    <view class="jobContent_box">
+      <view class="jobContent_top">工作内容</view>
+      <view class="treatment">{{dataMap.jobOffline.content}}</view>
+      <view class="line"></view>
+      <view class="jobContent_bottom">
+        <text>已报名同学</text>
+        <view>
+          <text>{{dataMap.jobOffline.deliverTimes}}人</text>
+          <image src="/images/jobDetails/into_icon.png" mode="" class="into_icon"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="complaint">
+    <view class="complaint_text">联系我时,请说明是在e兼职上看到的 凡收取费用的兼职，请亲谨慎投递 </view>
+    <view class="complaint_button" onTap="accuse">我要投诉</view>
+  </view>
+  <view class="page_bottom">
+    <view class="page_bottom_left" onTap="ringUp">
+      <!-- <view class="share_box"><image src="/images/jobDetails/share_icon.png" mode="" class="share_icon" /><text class="share_text">分享</text></view> -->
+      <view class="consult_box">
+        <image src="/images/jobDetails/consult_icon.png" mode="" class="consult_icon" />
+        <text class="share_text">咨询</text>
+      </view>
+    </view>
+    <view class="page_bottom_right {{isdeliver?'page_bottom_right_active':''}}" onTap="deliver" data-item='{{dataMap}}'>投递简历</view>
+  </view>

@@ -1,0 +1,148 @@
+<view class="banner">
+  <view class="search">
+    <input type="text" placeholder="搜索" auto-focus class="search_input" onInput="bindKeyInput"/>
+    <image src="/images/job/search_icon.png" mode="" onTap="search" class="search_btn"/>
+  </view>
+</view>
+<view class="trumpet">
+  <image src="/images/job/trumpet_icon.png" mode="" class="trumpet_icon"/>
+  <view class="trumpet_text">
+    <swiper autoplay='false' circular='true' current="0" vertical='true' duration="100" interval="5000" style='height: 48rpx;width: 100%;'>
+      <block a:for="{{messageList}}">
+        <swiper-item key="{{item}}" class="trumpet_text_item">{{item.messageContent}}</swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<view class="nav">
+  <navigator url="../nav-list/nav-list?siteState=site&location={{location}}">
+    <view class="nav_icon">
+      <image src="/images/job/nearby.png" mode="" class="nav_icon" />
+    </view>
+    <text class="nav_text">附近兼职</text>
+  </navigator>
+  <navigator url="../nav-list/nav-list?siteState=site_none&fatSalary=fatSalary">
+    <view class="nav_icon">
+      <image src="/images/job/salary.png" mode="" class="nav_icon" />
+    </view>
+    <text class="nav_text">高薪兼职</text>
+  </navigator>
+  <navigator url="../nav-list/nav-list?siteState=site_none&settlementType=1">
+    <view class="nav_icon">
+      <image src="/images/job/day.png" mode="" class="nav_icon" />
+    </view>
+    <text class="nav_text">日结兼职</text>
+  </navigator>
+  <navigator url="../nav-list/nav-list?siteState=site_none&mainJobType=1&mainJobType=1">
+    <view class="nav_icon">
+      <image src="/images/job/practice.png" mode="" class="nav_icon" />
+    </view>
+    <text class="nav_text">实习专区</text>
+  </navigator>
+</view>
+<view class="content">
+  <view class="content_top">
+    <view class="select_item {{city ? 'select_item_active' : ''}}" onTap="city">
+      <text class="select_text">城市</text>
+      <image src="{{city ? '/images/job/down_icon_active.png' : '/images/job/down_icon.png'}}" mode="" class="down_icon"/>
+    </view>
+    <view class="select_item {{profession ? 'select_item_active' : ''}}" onTap="profession">
+      <text class="select_text">职业类型</text>
+      <image src="{{profession ? '/images/job/down_icon_active.png' : '/images/job/down_icon.png'}}" mode="" class="down_icon"/>
+    </view>
+    <view class="select_item {{Clearing? 'select_item_active' : ''}}" onTap="Clearing">
+      <text class="select_text">结算方式</text>
+      <image src="{{Clearing ? '/images/job/down_icon_active.png' : '/images/job/down_icon.png'}}" mode="" class="down_icon"/>
+    </view>
+    <view class="select_item {{sort? 'select_item_active' : ''}}" onTap="sort">
+      <text class="select_text">默认排序</text>
+      <image src="{{sort? '/images/job/down_icon_active.png' : '/images/job/down_icon.png'}}" mode="" class="down_icon"/>
+    </view>
+  </view>
+  <!--筛选开始-->
+  <!-- 城市开始 -->
+  <view class="city" hidden="{{!city}}">
+    <view class="city_box">
+      <view class="city_item" a:for={{screeningCondition.cityList}} data-item='{{item}}' onTap="selectCity">
+        <text class="city_item_text">{{item.key}}</text>
+        <image src="{{item.flag?checkurl:unchecked}}" mode="" class="city_item_img" />
+      </view>
+    </view>
+    <view class="city_bottom">
+      <view class="confirm" onTap="search_job">确定</view>
+    </view>
+  </view>
+  <!-- 城市结束 -->
+  <!-- 职位类型开始 -->
+  <view class="PositionType" hidden="{{!profession}}">
+    <view class="PositionType_box">
+      <view class="PositionType_left">
+        <view class="PositionType_left_item" a:for={{screeningCondition.jobTypeList}} a:key='this' data-index='{{index}}' onTap="jobtype">
+          <text class="PositionType_left_item_text"> {{item.key}}</text>
+          <image src="/images/job/triangle_icon.png" mode="" class="triangle {{jobtypeIndex==index?'triangle_active':''}}" />
+        </view>
+      </view>
+      <view class="PositionType_right">
+        <view class="PositionType_right_item" a:for={{screeningCondition.jobTypeList[jobtypeIndex].childrenList}} onTap="PositionType" data-index='{{index}}'>
+          <text class="PositionType_right_item_text">{{item.key}}</text>
+          <image src="{{item.flag? checkurl:unchecked }}" mode="" class="PositionType_right_item_pic" />
+        </view>
+      </view>
+    </view>
+    <view class="PositionType_bootm">
+      <view class="PositionType_bootm_confirm" onTap="search_job">确定</view>
+    </view>
+  </view>
+  <!-- 职位类型结束 -->
+  <!-- 结算方式开始 -->
+  <view class="Clearing" hidden="{{!Clearing}}">
+    <view class="Clearing_box">
+      <view class="Clearing_box_item" a:for={{screeningCondition.settlementList}} data-item='{{item}}' onTap="Clearingtype">
+        <text class="Clearing_box_item_text">{{item.key}}</text>
+        <image src="{{item.flag?checkurl:unchecked}}" mode="" class="Clearing_box_item_pic" />
+      </view>
+    </view>
+    <view class="Clearing_bottom">
+      <view class="PositionType_bootm_confirm" onTap="search_job">确定</view>
+    </view>
+  </view>
+  <!-- 结算方式结束 -->
+  <!-- 默认排序开始 -->
+  <view class="Sort" hidden="{{!sort}}">
+    <view class="Sort_box">
+      <view class="Sort_box_item" a:for={{screeningCondition.sortTypeList}} data-item='{{item}}' onTap="Sorttype">
+        <text class="Clearing_box_item_text">{{item.key}}</text>
+        <image src="{{item.flag?checkurl:unchecked}}" mode="" class="Clearing_box_item_pic" />
+      </view>
+    </view>
+    <view class="Sort_bottom">
+      <view class="PositionType_bootm_confirm" onTap="search_job">确定</view>
+    </view>
+  </view>
+  <!-- 默认排序结束 -->
+  <!-- 筛选结束 -->
+  <view class="content_box">
+    <view class="content_item" a:for={{dataList}}>
+      <navigator url="../jobDetails/jobDetails?JobOfflineId={{item.id}}" redirect hover-class="className">
+        <image src="/images/job_icon/{{item.picName}}.png" mode="" class="item_icon"/>
+        <view class="item_text_box">
+          <view class="item_text1">
+            <text class="item_text1_title">{{item.title}}</text>
+            <view class="text1_condition" hidden="{{item.isVip==0?'true':'false'}}">置顶</view>
+          </view>
+          <view class="item_text2">
+            <view class="text2_left">
+              <text class="details">{{item.jobTypeStr.split(',')[1]}}</text>
+              <view class="text2_condition">{{item.settlementTypeStr}}结</view>
+            </view>
+            <view class="text2_right">
+              <text class="text2_money">{{item.salaryStr}}</text>
+              <text class="text2_unit">RMB/{{item.salaryUnitStr}}</text>
+            </view>
+          </view>
+          <text class="text3">{{item.startDate}} 至 {{item.endDate}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

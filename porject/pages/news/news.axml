@@ -1,0 +1,16 @@
+  
+<view class="job_helper item" onTap="intoJobAssistant">
+  <image src="/images/news/job_helper.png" mode="" />
+  <view class="text_box">
+    <text class="text_top">兼职小助手</text>
+    <text class="text_bottom">职位为你量身定制</text>
+  </view>
+</view>
+<view class="inform item" onTap="intoInform">
+  <image src="/images/news/service.png" mode="" />
+  <view class="text_box">
+    <text class="text_top">通知</text>
+    <text class="text_bottom">你的兼职管家，录用、发工...</text>
+  </view>
+</view>
+<!-- <view class="service item"><image src="/images/news/inform.png" mode="" /><view class="text_box"><text class="text_top">客服</text><text class="text_bottom">您好，我说客服MM,有什么...</text></view></view> -->

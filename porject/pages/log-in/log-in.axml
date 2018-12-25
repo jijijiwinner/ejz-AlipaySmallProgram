@@ -1,0 +1,20 @@
+<view class="box">
+  <image src="/images/log-in/logo_top.png" mode="" class="logo_top"/>
+  <view class="content">
+    <view class="mobile">
+      <image src="/images/log-in/user_icon.png" mode="" class="mobile_icon"/>
+      <input type="" placeholder="手机号码" maxlength="11" onInput="mobileInput"  auto-focus class="mobile_number"/>
+    </view>
+    <view class="mobile password">
+      <image src="/images/log-in/password_icon.png" mode="" class="password_icon"/>
+      <input type="" password placeholder="6-16位数字或字母" onInput="passwordInput" auto-focus password class="mobile_number"/>
+    </view>
+    <view class="content_bottom">
+      <text onTap="forget">忘记密码？</text>
+      <text onTap="register">注册账号</text>
+    </view>
+  </view>
+</view>
+<view class="log_in" onTap="logIn">
+  <text class="log_in_text">登陆</text>
+</view>

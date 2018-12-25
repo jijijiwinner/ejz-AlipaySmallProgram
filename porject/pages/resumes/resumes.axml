@@ -1,0 +1,102 @@
+<view class="name">
+  <view class="name_top">
+    <view class="name_head_box">
+      <image src="{{userResume.headerFile}}" mode="" class="name_head"/>
+    </view>
+    <view class="name_text">
+      <text class="name_name">{{userResume.realName}}</text>
+      <view class="name_text_bottom">
+        <view class="name_text_bottom_left">
+          <view>
+            <text class="sex">性别：</text>
+            <text class="sex_text">{{userResume.gender==1?'男':'女'}}</text>
+          </view>
+          <view>
+            <text class="sex">年龄：</text>
+            <text class="sex_text">{{userResume.age}}</text>
+          </view>
+        </view>
+        <view class="name_text_bottom_right">
+          <view>
+            <text class="sex">身高：</text>
+            <text class="sex_text">{{userResume.height}}</text>
+          </view>
+          <view>
+            <text class="sex">体重：</text>
+            <text class="sex_text">{{userResume.weight}}kg</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="name_pic"><image src="/images/resumes/name_pic_item.png" mode="" class="name_pic_item"/><image src="/images/resumes/name_pic_item.png" mode="" class="name_pic_item"/><image src="/images/resumes/name_pic_item.png" mode="" class="name_pic_item"/><image src="/images/resumes/name_pic_item.png" mode="" class="name_pic_item"/><image src="/images/resumes/name_pic_item.png" mode="" class="name_pic_item"/><image src="/images/resumes/name_pic_item.png" mode="" class="name_pic_item"/></view> -->
+</view>
+<!-- 学历信息和求职意向 -->
+<view class="education_intention">
+  <view class="education_top">
+    <image src="/images/resumes/education_iocn.png" mode="" class="education_top_icon" />
+    <text class="education_top_text">学历信息</text>
+  </view>
+  <view class="education_content">
+    <view class="education_item">
+      <text class="education_item_text_left">教育情况:</text>
+      <text class="education_item_text_right">{{userResume.eduSituation==0?'在校生':'已毕业'}}</text>
+    </view>
+    <view class="education_item">
+      <text class="education_item_text_left">毕业学校:</text>
+      <text class="education_item_text_right">{{userResume.school}}</text>
+    </view>
+    <view class="education_item">
+      <text class="education_item_text_left">入学年份:</text>
+      <text class="education_item_text_right">{{userResume.startSchool}}年</text>
+    </view>
+    <view class="education_item">
+      <text class="education_item_text_left">学历:</text>
+      <text class="education_item_text_right">{{userResume.degree}}</text>
+    </view>
+    <view class="education_item">
+      <text class="education_item_text_left">专业:</text>
+      <text class="education_item_text_right">{{userResume.profession}}</text>
+    </view>
+  </view>
+  <view class="intention_top">
+    <image src="/images/resumes/intention_icon.png" mode="" class="intention_top_icon" />
+    <text class="education_top_text">求职意向</text>
+  </view>
+  <view class="intention_content">
+    <view class="position">
+      <view class="position_left">期望职位：</view>
+      <view class="positiom_right">
+        <view class="positiom_right_item" a:for="{{userResume.jobIntent}}">{{item}}</view>
+      </view>
+    </view>
+    <view class="site">
+      <text class="site_left">期望地址：</text>
+      <text class="site_right">{{userResume.address.province}}{{userResume.address.city}}{{userResume.address.area}}</text>
+    </view>
+  </view>
+</view>
+<!-- 评价 -->
+<view class="evaluate {{userResume.intro==''?'display_none':''}}">
+  <view class="intention_top evaluate_top">
+    <image src="/images/resumes/evaluate_icon.png" mode="" class="evaluate_top_icon" />
+    <text class="education_top_text">自我评价</text>
+  </view>
+  <view class="evaluate_content">
+    <view class="evaluate_item" a:for="{{userResume.intro}}">{{item}}</view>
+  </view>
+</view>
+<!-- 联系 -->
+<view class="relation">
+  <view class="intention_top evaluate_top">
+    <image src="/images/resumes/relation_icon.png" mode="" class="relation_top_icon" />
+    <text class="education_top_text">联系方式</text>
+  </view>
+  <view class="relation_content">
+    <view class="relation_content_text">电话：{{userResume.mobile}}</view>
+    <view class="relation_content_text">邮箱：{{userResume.email}}</view>
+    <view class="relation_content_text">Q Q：{{userResume.qq}}</view>
+  </view>
+</view>
+<!--编辑简历 -->
+<view class="compile" onTap="editResumes">编辑简历</view>

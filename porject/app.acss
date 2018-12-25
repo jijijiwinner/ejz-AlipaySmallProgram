@@ -1,0 +1,8 @@
+page {
+  background-color:#f4f8fe;
+}
+input{
+    font-family: MicroSoft YaHei;
+    border:0;
+    background-color:transparent ;
+}

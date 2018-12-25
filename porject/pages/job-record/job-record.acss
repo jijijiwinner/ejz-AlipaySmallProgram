@@ -1,0 +1,129 @@
+page{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16rpx 12rpx;
+}
+.job_box{
+   width: 100%;
+   height: 180rpx;
+   background-color: #ffffff;
+   border-radius: 10rpx;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-sizing: border-box;
+   padding:0 18rpx;
+}
+.job_pic{
+    width: 108rpx;
+    height: 108rpx;
+    background-size: 100% 100%;
+}
+.job_right{
+    height: 108rpx;
+    width: 556rpx;
+}
+.name{
+    color: #333333;
+    font-size: 28rpx;
+    text-align: left;
+}
+.nub{
+    font-size: 40rpx;
+    color:#fdba32;
+    text-align: right;
+}
+.time_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #bbbbbb;
+}
+.time{
+    font-size: 20rpx;
+}
+.unit{
+    font-size: 22rpx;
+} 
+
+/* record */
+.record{
+    margin-top: 16rpx;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: left;
+}
+.record_top{
+    height: 268rpx;
+    width: 100%;
+    border-bottom: 1rpx solid #dbedff;
+    box-sizing: border-box;
+    padding-top: 28rpx;
+}
+.record_top_top{
+
+    margin-left: 44rpx;
+    font-size: 28rpx;
+    color: #333333;                        
+}
+.record_pic_box{
+    margin-top: 46rpx;
+    margin-bottom: 32rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.record_pic{
+    height: 50rpx;
+    width: 50rpx;
+    background-size: 100% 100%;
+}
+.line{
+    height: 3rpx;
+    width: 140rpx;
+    background-color: #37d3cb;
+}
+.record_text_box{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333333;
+    width: 458rpx;     
+}
+/* record_bottom */
+.record_bottom{
+    width: 100%;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding-top: 40rpx;
+    padding-left: 42rpx;
+    padding-bottom: 36rpx;
+}
+.record_bottom .record_bottom_item_none{
+    display: none;
+}
+.record_bottom_item_top{
+    margin-top:20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.record_bottom_item_top_icon{
+    width: 26rpx;
+    height: 26rpx;
+    background-size: 100% 100%;
+    margin-right: 20rpx;
+}
+.record .timeer{
+    font-size: 26rpx;
+    color: #888888;
+    text-align: left;
+}
+.record_bottom_item_text{
+    margin-left: 46rpx;
+    font-size: 26rpx;
+    text-align: left;
+    color: #333333;
+}
