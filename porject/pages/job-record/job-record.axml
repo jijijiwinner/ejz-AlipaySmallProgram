@@ -1,5 +1,5 @@
 <view class="job_box">
-  <image src="/images/job_icon/{{picName}}.png" mode="" class="job_pic"/>
+  <image src="{{picName}}" mode="" class="job_pic"/>
   <view class="job_right">
     <view class="name">{{data.dataMap.jobOffline.title}}</view>
     <view class="nub">{{data.dataMap.jobOffline.salaryStr}}</view>

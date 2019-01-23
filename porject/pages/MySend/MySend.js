@@ -2,18 +2,16 @@ var app = getApp();
 var time = require('../../utils/utils.js'); //引入微信自带的日期格式化
 Page({
   data: {
+    token: app.token,
     currentTab: 0,
-    token: '',
-    data: '',
+    data: {},
     page: 0,
     jobOfflinePage: []
 
   },
   onLoad() {
-    var that = this;
-    let res = my.getStorageSync({ key: 'token' });
     this.setData({
-      token: res.data.token
+      token: app.token
     })
     this.getJobOfflineList()
   },
@@ -27,18 +25,17 @@ Page({
       },
       dataType: 'json',
       success: (res) => {
+        if (res.data.dataMap.jobOfflinePage == undefined) {
+          return
+        }
         let comms = res.data.dataMap.jobOfflinePage,
           cc = this.data.jobOfflinePage;
         for (let c in comms) {
-          let startdate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
-          let enddate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].solrJobOffline.jobTypeStr.split(',')[1])
-          comms[c].solrJobOffline.startDate = startdate;
-          comms[c].solrJobOffline.endDate = enddate;
-          comms[c].solrJobOffline.picName = picName;
+          comms[c].solrJobOffline.startDate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
+          comms[c].solrJobOffline.endDate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
+          comms[c].solrJobOffline.picName = time.PicName(comms[c].solrJobOffline.jobSubtypeId);
         }
-        comms = cc != undefined ? [...cc, ...comms] : comms;
-        this.data.jobOfflinePage = comms;
+        this.data.jobOfflinePage = [...cc, ...comms];
         this.setData({
           jobOfflinePage: this.data.jobOfflinePage
         });
@@ -51,9 +48,9 @@ Page({
       }
     });
   },
-  await() {     //录用
+  getDaiLuYongList() {     //录用
     my.httpRequest({
-      url: app.url + 'api/jobRequest/getDaiLuYongList.do',     //录用
+      url: app.url + 'api/jobRequest/getDaiLuYongList.do',
       method: 'POST',
       data: {
         token: this.data.token,
@@ -61,18 +58,17 @@ Page({
       },
       dataType: 'json',
       success: (res) => {
+        if (res.data.dataMap.jobOfflinePage == undefined) {
+          return
+        }
         let comms = res.data.dataMap.jobOfflinePage,
           cc = this.data.jobOfflinePage;
         for (let c in comms) {
-          let startdate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
-          let enddate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].solrJobOffline.jobTypeStr.split(',')[1])
-          comms[c].solrJobOffline.startDate = startdate;
-          comms[c].solrJobOffline.endDate = enddate;
-          comms[c].solrJobOffline.picName = picName;
+          comms[c].solrJobOffline.startDate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
+          comms[c].solrJobOffline.endDate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
+          comms[c].solrJobOffline.picName = time.PicName(comms[c].solrJobOffline.jobSubtypeId);
         }
-        comms = cc != undefined ? [...cc, ...comms] : comms;
-        this.data.jobOfflinePage = comms;
+        this.data.jobOfflinePage = [...cc, ...comms];
         this.setData({
           jobOfflinePage: this.data.jobOfflinePage
         });
@@ -95,18 +91,17 @@ Page({
       },
       dataType: 'json',
       success: (res) => {
+        if (res.data.dataMap.jobOfflinePage == undefined) {
+          return
+        }
         let comms = res.data.dataMap.jobOfflinePage,
           cc = this.data.jobOfflinePage;
         for (let c in comms) {
-          let startdate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
-          let enddate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].solrJobOffline.jobTypeStr.split(',')[1])
-          comms[c].solrJobOffline.startDate = startdate;
-          comms[c].solrJobOffline.endDate = enddate;
-          comms[c].solrJobOffline.picName = picName;
+          comms[c].solrJobOffline.startDate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
+          comms[c].solrJobOffline.endDate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
+          comms[c].solrJobOffline.picName = time.PicName(comms[c].solrJobOffline.jobSubtypeId);
         }
-        comms = cc != undefined ? [...cc, ...comms] : comms;
-        this.data.jobOfflinePage = comms;
+        this.data.jobOfflinePage = [...cc, ...comms];
         this.setData({
           jobOfflinePage: this.data.jobOfflinePage
         });
@@ -129,18 +124,17 @@ Page({
       },
       dataType: 'json',
       success: (res) => {
+        if (res.data.dataMap.jobOfflinePage == undefined) {
+          return
+        }
         let comms = res.data.dataMap.jobOfflinePage,
           cc = this.data.jobOfflinePage;
         for (let c in comms) {
-          let startdate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
-          let enddate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].solrJobOffline.jobTypeStr.split(',')[1])
-          comms[c].solrJobOffline.startDate = startdate;
-          comms[c].solrJobOffline.endDate = enddate;
-          comms[c].solrJobOffline.picName = picName;
+          comms[c].solrJobOffline.startDate = time.formatTimeTwo(comms[c].solrJobOffline.startDate, 'Y-M-D');
+          comms[c].solrJobOffline.endDate = time.formatTimeTwo(comms[c].solrJobOffline.endDate, 'Y-M-D');
+          comms[c].solrJobOffline.picName = time.PicName(comms[c].solrJobOffline.jobSubtypeId);
         }
-        comms = cc != undefined ? [...cc, ...comms] : comms;
-        this.data.jobOfflinePage = comms;
+        this.data.jobOfflinePage = [...cc, ...comms];
         this.setData({
           jobOfflinePage: this.data.jobOfflinePage
         });
@@ -171,7 +165,7 @@ Page({
           jobOfflinePage: [],
           page: 0
         })
-        this.await()
+        this.getDaiLuYongList()
       } else if (this.data.currentTab == 2) {
         this.setData({
           jobOfflinePage: [],
@@ -199,7 +193,7 @@ Page({
         this.setData({
           jobOfflinePage: []
         })
-        this.await()
+        this.getDaiLuYongList()
       },
     });
   },
@@ -219,12 +213,11 @@ Page({
     this.setData({
       page: this.data.page
     })
-    console.log(this.data.page + '111111111111')
     if (this.data.currentTab == 0) {
       this.getJobOfflineList()
     } else if (this.data.currentTab == 1) {
 
-      this.await()
+      this.getDaiLuYongList()
     } else if (this.data.currentTab == 2) {
 
       this.getDaiShangGangList()

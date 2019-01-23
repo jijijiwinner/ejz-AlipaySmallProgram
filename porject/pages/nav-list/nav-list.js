@@ -106,7 +106,7 @@ Page({
         for (let c in comms) {
           let startdate = time.formatTimeTwo(comms[c].startDate, 'Y-M-D');
           let enddate = time.formatTimeTwo(comms[c].endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].jobTypeStr.split(',')[1])
+          let picName = time.PicName(comms[c].jobSubtypeId)
           comms[c].startDate = startdate;
           comms[c].endDate = enddate;
           comms[c].picName = picName;

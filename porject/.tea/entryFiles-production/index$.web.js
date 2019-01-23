@@ -1,5 +1,6 @@
 require('@alipay/appx-compiler/lib/sjsEnvInit');
 require('./config$');
+require('../../pages/components/JobItem/JobItem');
 require('../../pages/job/job');
 require('../../pages/news/news');
 require('../../pages/my/my');

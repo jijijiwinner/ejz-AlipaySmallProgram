@@ -1,5 +1,5 @@
 var app = getApp();
-var time = require('../../utils/utils.js'); //引入微信自带的日期格式化
+var time = require('../../utils/utils.js'); 
 Page({
   data: {
     cityId: '',
@@ -8,7 +8,7 @@ Page({
         pushList: []
       }
     },
-    pageNo: -1
+    pageNo: 0
   },
   onLoad() {
     this.getJobPushList();
@@ -28,18 +28,12 @@ Page({
         let comms = res.data.dataMap.pushList;
         let cc = this.data.data.dataMap.pushList;
         for (let c in comms) {
-          let pushDate = time.formatTimeTwo(comms[c].pushDate, 'Y-M-D');
-          let startDate = time.formatTimeTwo(comms[c].pushjobInfo.startDate, 'Y-M-D');
-          let endDate = time.formatTimeTwo(comms[c].pushjobInfo.endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].pushjobInfo.jobTypeStr.split(',')[1])
-          comms[c].pushDate = pushDate;
-          comms[c].pushjobInfo.startDate = startDate;
-          comms[c].pushjobInfo.endDate = endDate;
-          comms[c].pushjobInfo.picName = picName;
+          comms[c].pushDate = time.formatTimeTwo(comms[c].pushDate, 'Y-M-D');
+          comms[c].pushjobInfo.startDate = time.formatTimeTwo(comms[c].pushjobInfo.startDate, 'Y-M-D');
+          comms[c].pushjobInfo.endDate = time.formatTimeTwo(comms[c].pushjobInfo.endDate, 'Y-M-D');
+          comms[c].pushjobInfo.picName = time.PicName(comms[c].pushjobInfo.jobSubtypeId);
         }
-        comms = cc != undefined ? [...cc, ...comms] : comms;
-        this.data.data.dataMap.pushList = comms;
-        console.log(this.data.data)
+        this.data.data.dataMap.pushList = [...cc, ...comms];
         this.setData({
           data: this.data.data
         })

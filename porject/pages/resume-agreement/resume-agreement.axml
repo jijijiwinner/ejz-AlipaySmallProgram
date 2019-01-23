@@ -1,0 +1,22 @@
+<view class="page">
+  <view>
+    <text>同意该协议即意味着                                              
+    </text>
+  </view>
+  <view>
+    <text>1、 e兼职将拥有简历所有权；                                          
+    </text>
+  </view>
+  <view>
+    <text>2、 简历向e兼职平台所有企业开放，用人企业可以查看您的个人简历；                                        
+    </text>
+  </view>
+  <view>
+    <text>3、 e兼职有权优先将简历推荐给企业；                                    
+    </text>
+  </view>
+  <view>
+    <text>4、 由用人方泄漏简历信息造成损失，本公司不承担责任。      
+    </text>
+  </view>
+</view>

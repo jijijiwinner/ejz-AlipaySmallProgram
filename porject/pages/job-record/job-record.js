@@ -20,11 +20,10 @@ Page({
         jobId: this.data.jobId
       },
       success: (res) => {
-        console.log(res.data)
         this.setData({
           data: res.data,
           createdDate: time.formatTimeTwo(res.data.dataMap.jobOffline.createdDate, 'Y-M-D'),
-          picName: time.PicName(res.data.dataMap.jobOffline.jobTypeStr.split(',')[1])
+          picName: time.PicName(res.data.dataMap.jobOffline.jobSubtypeId)
         })
       },
     });

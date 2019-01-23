@@ -1,7 +1,5 @@
 Page({
   data: {},
-  onLoad() { },
-  onShow() { },
   intoJobAssistant() {
     my.navigateTo({
       url: '../jobAssistant/jobAssistant'

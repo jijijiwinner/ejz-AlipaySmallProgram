@@ -1,24 +1,30 @@
 <view class="item" a:for={{data.dataMap.pushList}}>
-  <view class="item_top">{{item.pushDate}}</view>
+  <view class="item_top">{{item.pushDate}}
+  </view>
   <navigator url="../jobDetails/jobDetails?JobOfflineId={{item.pushjobInfo.id}}" redirect class="all_item">
-    <image src="/images/job_icon/{{item.pushjobInfo.picName}}.png" mode="" class="allItem_pic"/>
+    <image src="{{item.pushjobInfo.picName}}" mode="" class="allItem_pic"/>
     <view class="i_top_right">
       <view class="item_text1">
-        <text class="job_name">{{item.pushjobInfo.title}}</text>
+        <text class="job_name">{{item.pushjobInfo.title}}                                                              
+        </text>
       </view>
       <view class="item_text2">
         <view class="text2_left">
-          <text class="text2_left_job">{{item.pushjobInfo.jobTypeStr.split(',')[1]}}</text>
-          <view class="settlement">{{item.pushjobInfo.settlementTypeStr}}结</view>
+          <text class="text2_left_job">{{item.pushjobInfo.jobTypeStr.split(',')[1]}}                                                                            
+          </text>
+          <view class="settlement">{{item.pushjobInfo.settlementTypeStr}}结                                                                            
+          </view>
         </view>
         <view class="text2_right">
-          <text class="money">{{item.pushjobInfo.salaryStr}}</text>
-          <text class="unit">RMB/{{item.pushjobInfo.salaryUnitStr}}</text>
+          <text class="money">{{item.pushjobInfo.salaryStr}}                                                                            
+          </text>
+          <text class="unit">RMB/{{item.pushjobInfo.salaryUnitStr}}                                                                            
+          </text>
         </view>
       </view>
       <view class="item_text3">
-        <text class="text3_time">{{item.pushjobInfo.startDate}} 至 {{item.pushjobInfo.endDate}}</text>
-        <!-- <view class="text3_site"><image src="/images/MySend/site_icon.png" mode="" class="text3_site_icon"/><text class="text3_site_text">18.29km</text></view> -->
+        <text class="text3_time">{{item.pushjobInfo.startDate}} 至 {{item.pushjobInfo.endDate}}                                                              
+        </text>
       </view>
     </view>
   </navigator>

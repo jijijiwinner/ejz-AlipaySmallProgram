@@ -1,4 +1,4 @@
-<view class="item" a:for="{{data.dataMap.userInformList}}">
+<view class="item" a:for="{{data.dataMap.userInformList}}" key="{{item.id}}">
   <view class="item_top {{item.jobStatus==3?'dispaly_none':item.jobStatus==6?'dispaly_none':item.jobStatus==7?'dispaly_none':''}}">
     <view class="item_top_time">{{item.createdDateTop}} </view>
   </view>

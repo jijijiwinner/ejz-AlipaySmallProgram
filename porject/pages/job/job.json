@@ -1,1 +1,5 @@
-{}
+{
+   "usingComponents":{
+    "job-item":"../components/JobItem/JobItem"
+  }
+}

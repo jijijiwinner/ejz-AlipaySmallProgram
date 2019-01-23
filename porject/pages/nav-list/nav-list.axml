@@ -3,25 +3,6 @@
 </view>
 <view class="content">
     <view class="content_item" a:for={{jobOfflinePage.dataList}}>
-        <navigator url="../jobDetails/jobDetails?JobOfflineId={{item.id}}" redirect hover-class="className">
-            <image src="/images/job_icon/{{item.picName}}.png" mode="" class="item_icon"/>
-            <view class="item_text_box">
-                <view class="item_text1">
-                    <text class="item_text1_title">{{item.title}}</text>
-                    <view class="text1_condition" hidden="{{item.isVip==0?'true':'false'}}">置顶</view>
-                </view>
-                <view class="item_text2">
-                    <view class="text2_left">
-                        <text class="details">{{item.jobTypeStr.split(',')[1]}}</text>
-                        <view class="text2_condition">{{item.settlementTypeStr}}结</view>
-                    </view>
-                    <view class="text2_right">
-                        <text class="text2_money">{{item.salaryStr}}</text>
-                        <text class="text2_unit">RMB/{{item.salaryUnitStr}}</text>
-                    </view>
-                </view>
-                <text class="text3">{{item.startDate}} 至 {{item.endDate}}</text>
-            </view>
-        </navigator>
+        <job-item item={{item}} />
     </view>
 </view>

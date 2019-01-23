@@ -1,0 +1,6 @@
+.page {
+  padding: 50rpx 20rpx 0rpx 20rpx;
+}
+view {
+  margin-bottom: 20rpx;
+}

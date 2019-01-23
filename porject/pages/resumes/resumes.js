@@ -10,15 +10,14 @@ Page({
 
   },
   onShow() {
-    let res = my.getStorageSync({ key: 'token' });
-    if (res.data == undefined) {
+    this.setData({
+      token: app.token
+    });
+    if (this.data.token == "") {
       my.navigateTo({
         url: '../log-in/log-in'
       });
     } else {
-      this.setData({
-        token: res.data.token
-      });
       this.showUserResume();
     }
   },

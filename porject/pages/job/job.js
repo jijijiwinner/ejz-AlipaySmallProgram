@@ -2,6 +2,11 @@ var app = getApp();
 var time = require('../../utils/utils.js'); //引入微信自带的日期格式化
 Page({
   data: {
+    navlist: [
+      {
+        parameter: ''
+      }
+    ],      //nav导航栏
     messageList: {},
     city: false,
     profession: false,
@@ -15,7 +20,7 @@ Page({
     pageNo: -1,
     positionTypeIndex: 0,
     dataList: [],
-    location: {},
+    location: '',
     cityId: '',          //城市ID,多个时以","分割ID拼接字符串
     mainJobType: '',      //兼职主类型
     subJobType: '',       //兼职子类型
@@ -28,32 +33,22 @@ Page({
   },
   onLoad() {
     var that = this;
-    if (my.getLocation) {
-      my.getLocation({     //获取用户所在城市
-        cacheTimeout: 30,
-        type: 1,
-        success(res) {
-          my.hideLoading();
-          that.setData({
-            hasLocation: true,
-            location: res,
-          })
-          that.getCityId(res.city)     //获取城市id
-        },
-        fail() {
-          my.hideLoading();
-          my.alert({ title: '定位失败' });
-        },
-      });
-    } else {
-      // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
-      my.alert({
-        title: '提示',
-        content: '当前支付宝版本过低，无法使用此功能，请升级最新版本的支付宝'
-      });
-    };
-
-
+    my.getLocation({     //获取用户所在城市
+      cacheTimeout: 30,
+      type: 1,
+      success(res) {
+        my.hideLoading();
+        that.setData({
+          hasLocation: true,
+          location: res,
+        })
+        that.getCityId(res.province)     //获取城市id
+      },
+      fail() {
+        my.hideLoading();
+        my.alert({ title: '定位失败' });
+      },
+    });
   },
   getCityId(cityName) {
     my.httpRequest({
@@ -141,7 +136,7 @@ Page({
         for (let c in comms) {
           let startdate = time.formatTimeTwo(comms[c].startDate, 'Y-M-D');
           let enddate = time.formatTimeTwo(comms[c].endDate, 'Y-M-D');
-          let picName = time.PicName(comms[c].jobTypeStr.split(',')[1])
+          let picName = time.PicName(comms[c].jobSubtypeId);
           comms[c].startDate = startdate;
           comms[c].endDate = enddate;
           comms[c].picName = picName;

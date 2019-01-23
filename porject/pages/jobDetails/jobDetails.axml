@@ -1,6 +1,6 @@
 <view class="inner">
   <view class="header">
-    <image src="/images/job_icon/{{picName}}.png" mode="" class="header_pic"/>
+    <image src="{{picName}}" mode="" class="header_pic"/>
     <view class="header_right">
       <view class="job_name">{{dataMap.jobOffline.title}}</view>
       <view class="h_r_box2">

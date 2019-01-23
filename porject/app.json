@@ -14,7 +14,8 @@
     "pages/jobDetails/jobDetails",
     "pages/jobAssistant/jobAssistant",
     "pages/inform/inform",
-    "pages/job-record/job-record"
+    "pages/job-record/job-record",
+    "pages/resume-agreement/resume-agreement"
   ],
   "window": {
     "defaultTitle": "e兼职"

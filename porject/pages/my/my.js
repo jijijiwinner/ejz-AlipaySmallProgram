@@ -1,26 +1,25 @@
 var app = getApp();
 Page({
   data: {
-    token: '',
+    token: app.token,
     data: {
       dataMap: {
         userResume: {
           realName: '登陆注册',
-          headerFile:'/images/my/moren_icon.png'
+          headerFile: '/images/my/moren_icon.png'
         }
       }
     }
   },
   onShow() {
-    let res = my.getStorageSync({ key: 'token' });
-    if (res.data == undefined) {
-      // my.navigateTo({
-      //   url: '../log-in/log-in'
+    this.setData({
+      token: app.token
+    })
+    if (this.data.token === '') {
+      // my.alert({
+      //   content: '请进行登录'
       // });
     } else {
-      this.setData({
-        token: res.data.token
-      });
       my.httpRequest({
         url: app.url + 'api/user/showUserResume.do',
         data: {
@@ -28,7 +27,6 @@ Page({
         },
         success: (res) => {
           if (res.data.code == 0) {
-            console.log(res)
             this.setData({
               data: res.data
             })
@@ -41,6 +39,7 @@ Page({
       });
     }
   },
+
   IntoLogIn() {
     if (this.data.token != '') {
 

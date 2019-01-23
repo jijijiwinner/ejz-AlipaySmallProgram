@@ -55,14 +55,12 @@ Page({
         },
         success: (res) => {
           if (res.data.code == 0) {
-            this.setData({
-              data: res.data
-            });
+            app.token = res.data.dataMap.token;
             my.setStorageSync({
               key: 'token',
               data: {
-                token: this.data.data.dataMap.token
-              }
+                token: res.data.dataMap.token
+              },
             });
             my.navigateBack({
               delta: 1
@@ -72,8 +70,6 @@ Page({
               content: res.data.msg
             })
           }
-
-          console.log(res)
         },
 
       });

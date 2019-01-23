@@ -7,32 +7,21 @@ Page({
     endDate: '',
     startDatetime: '',
     endDatetime: '',
-    token: '',
+    token: app.token,
     isdeliver: '',
     picName: '',
     jobOfflineId: ''
   },
   onLoad(options) {
     var JobOfflineId = options.JobOfflineId;
-    let res = my.getStorageSync({ key: 'token' });
-    if (res.data == undefined) {
-      this.setData({
-        token: '',
-        jobOfflineId: JobOfflineId
-      })
-    } else {
-      this.setData({
-        token: res.data.token,
-        jobOfflineId: JobOfflineId
-      })
-      this.setData({
-
-      })
-    }
-    console.log(this.data.jobOfflineId)
+    this.setData({
+      jobOfflineId: JobOfflineId
+    })
   },
   onShow() {
-    console.log(this.data.jobOfflineId)
+    this.setData({
+      token: app.token
+    })
     this.getSingle()
     this.getisdeliver();
   },
@@ -61,14 +50,13 @@ Page({
       },
       dataType: 'json',
       success: (res) => {
-        console.log(res.data.code)
         if (res.data.code == 0) {
           let createdDate = time.formatTimeTwo(res.data.dataMap.jobOffline.createdDate, 'Y-M-D h:m:s');
           let startDate = time.formatTimeTwo(res.data.dataMap.jobOffline.startDate, 'Y-M-D');
           let endDate = time.formatTimeTwo(res.data.dataMap.jobOffline.endDate, 'Y-M-D');
           let startDatetime = time.formatTimeTwo(res.data.dataMap.jobOffline.startDate, 'h:m:s');
           let endDatetime = time.formatTimeTwo(res.data.dataMap.jobOffline.endDate, 'h:m:s');
-          let picName = time.PicName(res.data.dataMap.jobOffline.jobTypeStr.split(',')[1])
+          let picName = time.PicName(res.data.dataMap.jobOffline.jobSubtypeId);
           this.setData({
             createdDate: createdDate || '',
             startDate: startDate || '',
@@ -110,7 +98,6 @@ Page({
       });
     } else {
       let itm = e.currentTarget.dataset.item;
-      console.log(itm);
       my.httpRequest({
         url: app.url + 'api/job/offline/deliverResume.do',
         method: 'POST',
@@ -148,12 +135,19 @@ Page({
   }
   ,
   ringUp() {    //打电话
-    if (this.data.dataMap.jobOffline.mobile == '') {
-      my.alert({
-        content: '该职位为提供联系方式'
-      });
+    if (this.data.isdeliver) {
+      if (this.data.dataMap.jobOffline.mobile == '') {
+        my.alert({
+          content: '该职位为提供联系方式'
+        });
+      } else {
+        my.makePhoneCall({ number: this.data.dataMap.jobOffline.mobile });
+      }
     } else {
-      my.makePhoneCall({ number: this.data.dataMap.jobOffline.mobile });
+      my.alert({
+        content: '请先进行投递'
+      });
     }
+
   }
 });

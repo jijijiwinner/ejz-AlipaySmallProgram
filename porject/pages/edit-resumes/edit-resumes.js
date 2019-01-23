@@ -28,7 +28,7 @@ Page({
       "id": '',
       "fullName": "请选择",
     }],
-    token: '',           //用户身份认证
+    token: app.token,           //用户身份认证
     provinceId: '',      //省份ID
     cityId: '',          //城市ID
     areaId: '',          //区县ID
@@ -86,7 +86,9 @@ Page({
     ]
   },
   onShow() {
-    let res = my.getStorageSync({ key: 'token' });
+    this.setData({
+      token: app.token,
+    });
     // if (location.data != undefined) {
     //   this.setData({
     //     provinceIdIndex: location.data.provinceIdIndex,
@@ -94,9 +96,7 @@ Page({
     //     areaIdIddex: location.data.areaIdIddex,
     //   })
     // }
-    this.setData({
-      token: res.data.token,
-    });
+
     my.httpRequest({
       url: app.url + 'api/user/showUserResume.do',      //内容回显
       data: {
@@ -405,7 +405,7 @@ Page({
       areaId: this.data.areaList[e.detail.value].id
     });
   },
-  radioChangeGender: function (e) {    //性别
+  radioChangeGender: function(e) {    //性别
     var str = null;
     for (let value of this.data.genderList) {
       if (value.name === e.detail.value) {
@@ -439,7 +439,7 @@ Page({
       jobTypeId: jobTypeId.join()
     })
   },
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     if (e.detail.value.username == '') {
       my.alert({
         content: '请填写名字'
@@ -522,13 +522,13 @@ Page({
       });
     }
   },
-  chooseImage: function (e) {
+  chooseImage: function(e) {
     var that = this
     my.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         let apFile = res.apFilePaths[0];
         my.httpRequest({
@@ -551,7 +551,7 @@ Page({
                 policy: dataMpa.policy,
                 signature: dataMpa.signature
               },
-              success: function (res) {
+              success: function(res) {
                 let data = JSON.parse(res.data)
                 // let url = data.dataMap.url;
                 // let pos = url.lastIndexOf("/");
